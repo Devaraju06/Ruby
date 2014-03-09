@@ -1,12 +1,14 @@
 class MyblogsController < ApplicationController
-  before_action :set_myblog, only: [:show, :edit, :update, :destroy]
+  before_action :set_myblog, only: [:show, :edit, :update, :destroy,:login]
 
   # GET /myblogs
   # GET /myblogs.json
   def index
     @myblogs = Myblog.all
   end
-
+ def login
+   @myblogs = Myblog.all
+ end
   # GET /myblogs/1
   # GET /myblogs/1.json
   def show
@@ -64,6 +66,7 @@ class MyblogsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_myblog
+      self.login
       @myblog = Myblog.find(params[:id])
     end
 

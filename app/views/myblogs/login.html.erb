@@ -1,0 +1,7 @@
+<h1>
+	This is Login Page</h1>
+<% @myblogs.each do |myblog| %>
+<%= if myblog.name==devraj%>
+<h2>Login Success</h2>
+<%= else %>
+<h2>Log in Fail</h2>
